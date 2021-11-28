@@ -2,8 +2,7 @@ class ServerExecute {
     constructor(serverid, serverDir) {
         this.serverDir = serverDir + "/";
         this.serverid = serverid | require("uuid").v4();
-        this.setting = require("./configSetting.js").ConfigSetting;
-        this.setting = new this.setting();
+        this.setting = new (require("./configSetting.js")).ConfigSetting;
     }
 
     checkServerisExist() {
@@ -40,5 +39,6 @@ class ServerExecute {
     //     }
     //     return true;
     // }
-
 }
+
+exports.ServerExecute = ServerExecute;

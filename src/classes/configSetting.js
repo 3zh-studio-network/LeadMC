@@ -104,21 +104,20 @@ class ConfigSetting {
         return path;
     }
 
-    defaultServerData() {
-        return {
-            serverName: "",
-            serverIP: "",
-            serverPort: "",
-            serverVersion: "",
-            serverMaxPlayers: "",
-            serverCurrentPlayers: "",
-            serverDescription: "",
-            serverIcon: "",
-            serverArgs: "",
-            serverOnline: false
-        }
-    }
-
+    // defaultServerData() {
+    //     return {
+    //         serverName: "",
+    //         serverIP: "",
+    //         serverPort: "",
+    //         serverVersion: "",
+    //         serverMaxPlayers: "",
+    //         serverCurrentPlayers: "",
+    //         serverDescription: "",
+    //         serverIcon: "",
+    //         serverArgs: "",
+    //         serverOnline: false
+    //     }
+    // }
 }
 
 exports.ConfigSetting = ConfigSetting;

@@ -4,11 +4,11 @@
   "description": "The UI based Minecraft Server create tool.",
   "main": "main.js",
   "scripts": {
-    "react-start": "react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "start": "electron ."
+    "electron": "electron ."
   },
   "keywords": [
     "MC",
@@ -21,13 +21,29 @@
   "author": "Muisnow",
   "license": "Apache-2.0",
   "dependencies": {
-    "request": "^2.88.2",
-    "uuid": "^8.3.2"
-  },
-  "devDependencies": {
-    "electron": "^16.0.2",
+    "@electron/remote": "^2.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "webpack": "^5.64.2"
+    "react-router-dom": "^6.0.2",
+    "react-scripts": "^4.0.3",
+    "request": "^2.88.2",
+    "uuid": "^8.3.2",
+    "webpack": "4.44.2"
+  },
+  "devDependencies": {
+    "electron": "^16.0.2"
+  },
+  "homepage": ".",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

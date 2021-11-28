@@ -1,7 +1,7 @@
 const { app, BrowserWindow, globalShortcut } = require('electron');
-global.GetServerFile = require('./assets/classes/getServerFile.js').GetServerFile;
-global.ConfigSetting = require('./assets/classes/configSetting.js').ConfigSetting;
-global.DownloadFile = require('./assets/classes/downloadFile.js').DownloadFile;
+global.GetServerFile = require('./src/classes/getServerFile.js').GetServerFile;
+global.ConfigSetting = require('./src/classes/configSetting.js').ConfigSetting;
+global.DownloadFile = require('./src/classes/downloadFile.js').DownloadFile;
 
 function createWindow() {
     const win = new BrowserWindow({
@@ -16,7 +16,7 @@ function createWindow() {
 
     win.removeMenu();
     win.webContents.openDevTools();
-    win.loadFile('index.html');
+    win.loadURL(`file:///${__dirname}/build/index.html`);
 
     return win;
 }
