@@ -10,7 +10,7 @@ LeadMC isn't a Minecraft Launcher but a Minecraft Servers Controller with clean 
  * [ ] Easy to create a Minecraft Server in any version.
  * [ ] Easy to control server without commands.
  * [ ] Easy to customize servers.
- * [ ] Easy to download server with just a few steps.
+ * [x] Easy to download server with just a few steps.
  * [ ] Able to get the server's performance without any commands.
  * [ ] Able to control server with command.
  * [ ] Able to get server's logs.
@@ -18,7 +18,14 @@ LeadMC isn't a Minecraft Launcher but a Minecraft Servers Controller with clean 
  * [ ] Discord Servers can be able to control the server with just a few texts.
  * [ ] Clean UI.
 
-## Why There isn't Any File in This Repo?
+## How to use
 
-This is because we didn't finish the front and end to a certain degree, if we make LeadMC can be work, we will upload the repo to GitHub.
-Therefore, add this repo to "Watch" and "Star" to get updates.
+ 1. Download the repository.
+ 2. Install the modules with `npm install`.
+ 3. Run LeadMC with `npm start`.
+
+ _p.s. There isn't any UI now._
+
+## Why This Repository Cannot Be Used Now?
+
+This is because this repository is still in development, and the UI isn't developed yet.
