@@ -1,0 +1,32 @@
+{
+  "name": "leadmc",
+  "version": "0.0.1",
+  "description": "The UI based Minecraft Server create tool.",
+  "main": "main.js",
+  "scripts": {
+    "react-start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "start": "electron ."
+  },
+  "keywords": [
+    "MC",
+    "Server",
+    "UI",
+    "Based",
+    "Server",
+    "Control"
+  ],
+  "author": "Muisnow",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "request": "^2.88.2",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "webpack": "^5.64.2"
+  }
+}
