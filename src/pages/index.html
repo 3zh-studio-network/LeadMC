@@ -6,7 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>LeadMC</title>
         <script>
-            
+            var remote = require("@electron/remote");
+            window.remote = remote;
+
+            var ConfigSetting = remote.getGlobal('ConfigSetting');
+            var GetServerFile = remote.getGlobal('GetServerFile');
         </script>
     </head>
     <body>

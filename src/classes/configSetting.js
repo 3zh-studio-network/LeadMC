@@ -18,6 +18,10 @@ class ConfigSetting {
                     path: "$DEFAULT"
                 },
                 {
+                    name: "SERVERCONFIG",
+                    path: "$DEFAULT"
+                },
+                {
                     name: "LOGS",
                     path: "$DEFAULT"
                 },
@@ -31,30 +35,32 @@ class ConfigSetting {
     
     paths() {
         const { app } = require('electron');
+        var userDataPath = app.getPath('userData');
+        var tempPath = app.getPath('temp');
         return [
             {
                 name: "TEMP",
-                path: (this.getSetting("paths")).find(path => path.name == "TEMP").path == "$DEFAULT" ? app.getPath('temp') + "/" + this.getSetting("programName") : (getSetting("paths")).find(path => path.name == "TEMP").path
+                path: (this.getSetting("paths")).find(path => path.name == "TEMP").path == "$DEFAULT" ? tempPath + "/" + this.getSetting("programName") : (getSetting("paths")).find(path => path.name == "TEMP").path
             },
             {
                 name: "SERVERVERISON",
-                path: (this.getSetting("paths")).find(path => path.name == "SERVERDATA").path == "$DEFAULT" ? app.getPath('userData') + "/servers" : (getSetting("paths")).find(path => path.name == "SERVERDATA").path
+                path: (this.getSetting("paths")).find(path => path.name == "SERVERDATA").path == "$DEFAULT" ? userDataPath + "/servers" : (getSetting("paths")).find(path => path.name == "SERVERDATA").path
             },
             {
                 name: "SERVERDATA",
-                path: (this.getSetting("paths")).find(path => path.name == "SERVERVERISON").path == "$DEFAULT" ? app.getPath('userData') + "/serverdata" : (getSetting("paths")).find(path => path.name == "SERVERVERISON").path
+                path: (this.getSetting("paths")).find(path => path.name == "SERVERVERISON").path == "$DEFAULT" ? userDataPath + "/serverdata" : (getSetting("paths")).find(path => path.name == "SERVERVERISON").path
             },
             {
                 name: "SERVERCONFIG",
-                path: (this.getSetting("paths")).find(path => path.name == "SERVERCONFIG").path == "$DEFAULT" ? app.getPath('userData') + "/serverconfig" : (getSetting("paths")).find(path => path.name == "SERVERVERISON").path
+                path: (this.getSetting("paths")).find(path => path.name == "SERVERCONFIG").path == "$DEFAULT" ? userDataPath + "/serverconfig" : (getSetting("paths")).find(path => path.name == "SERVERVERISON").path
             },
             {
                 name: "LOGS",
-                path: (this.getSetting("paths")).find(path => path.name == "LOGS").path == "$DEFAULT" ? app.getPath('userData') + "/logs" : (getSetting("paths")).find(path => path.name == "LOGS").path
+                path: (this.getSetting("paths")).find(path => path.name == "LOGS").path == "$DEFAULT" ? userDataPath + "/logs" : (getSetting("paths")).find(path => path.name == "LOGS").path
             },
             {
                 name: "SETTING",
-                path: (this.getSetting("paths")).find(path => path.name == "SETTING").path == "$DEFAULT" ? app.getPath('userData') + "/setting" : (getSetting("paths")).find(path => path.name == "SETTING").path
+                path: (this.getSetting("paths")).find(path => path.name == "SETTING").path == "$DEFAULT" ? userDataPath + "/setting" : (getSetting("paths")).find(path => path.name == "SETTING").path
             }
         ]
     }

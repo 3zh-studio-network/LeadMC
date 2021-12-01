@@ -1,8 +1,10 @@
 const { app, BrowserWindow, globalShortcut } = require('electron');
+const remoteMain = require('@electron/remote/main');
+
+remoteMain.initialize();
+
 global.events = new (require("events")).EventEmitter();
-global.GetServerFile = require('./src/classes/getServerFile.js').GetServerFile;
-global.ConfigSetting = require('./src/classes/configSetting.js').ConfigSetting;
-global.DownloadFile = require('./src/classes/downloadFile.js').DownloadFile;
+require("./src/js/globalVar.js");
 
 function createWindow() {
     const win = new BrowserWindow({
@@ -17,7 +19,8 @@ function createWindow() {
 
     win.removeMenu();
     win.webContents.openDevTools();
-    win.loadURL(`file:///${__dirname}/src/page/index.html`);
+    win.loadURL(`file:///${__dirname}/src/pages/index.html`);
+    remoteMain.enable(win.webContents);
 
     return win;
 }

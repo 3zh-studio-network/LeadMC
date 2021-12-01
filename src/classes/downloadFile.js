@@ -28,6 +28,13 @@ class DownloadFile {
 
             var file = fs.createWriteStream(fileTempPath + "/" + this.uid);
             var req = request.get(this.fileURL);
+            sentMessage("downloading", {
+                status: "starting",
+                type: "file",
+                id: uuid,
+                fileName: this.fileName,
+                fileURL: this.fileURL,
+            }, events);
             var rp;
 
             req.on('response', (response) => {
@@ -40,6 +47,8 @@ class DownloadFile {
                             status: "downloading",
                             type: "file",
                             id: uuid,
+                            fileName: this.fileName,
+                            fileURL: this.fileURL,
                             fileTotalSize: nowDownloadSize,
                             fileDownloadedSize: response.headers['content-length']
                         }, events);
