@@ -22,23 +22,6 @@ class ServerExecute {
         }
         return true;
     }
-
-    // createServerData(serverDir, serverName, serverPort, serverVersion, servertype, serverArgs) {
-    //     if (!this.checkServerFileisExist() || !this.checkServerisExist()) {
-    //         var serverInfo = {
-    //             serverid: this.serverid,
-    //             serverDir: this.serverDir,
-    //             serverName: "",
-    //             serverPort: "",
-    //             serverVersion: "",
-    //             serverType: "",
-    //             serverCretateTime: "",
-    //             serverLog: "",
-    //             serverArgs: "",
-    //         };
-    //     }
-    //     return true;
-    // }
 }
 
 exports.ServerExecute = ServerExecute;

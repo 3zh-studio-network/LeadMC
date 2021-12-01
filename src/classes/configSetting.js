@@ -45,6 +45,10 @@ class ConfigSetting {
                 path: (this.getSetting("paths")).find(path => path.name == "SERVERVERISON").path == "$DEFAULT" ? app.getPath('userData') + "/serverdata" : (getSetting("paths")).find(path => path.name == "SERVERVERISON").path
             },
             {
+                name: "SERVERCONFIG",
+                path: (this.getSetting("paths")).find(path => path.name == "SERVERCONFIG").path == "$DEFAULT" ? app.getPath('userData') + "/serverconfig" : (getSetting("paths")).find(path => path.name == "SERVERVERISON").path
+            },
+            {
                 name: "LOGS",
                 path: (this.getSetting("paths")).find(path => path.name == "LOGS").path == "$DEFAULT" ? app.getPath('userData') + "/logs" : (getSetting("paths")).find(path => path.name == "LOGS").path
             },

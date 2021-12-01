@@ -6,15 +6,11 @@ class DownloadFile {
         this.fileURL = fileURL;
         this.fileName = fileName;
         this.uid = this.uuid.v4();
-        this._events = {};
+        this.events = global.events;
     }
 
-    sentMessage = (name, data, _events = this._events) => {
-        if (_events[name]) {
-            _events[name].forEach(listener => {
-                listener(data);
-            });
-        }
+    sentMessage = (name, data, events = this.events) => {
+        events.emit(name, data);
     }
 
     async downloadFile() {
@@ -26,7 +22,7 @@ class DownloadFile {
             var nowDownloadSize = 0;
             var sentMessage = this.sentMessage;
             var moveFile = this.moveFile;
-            var _events = this._events;
+            var events = this.events;
             var uuid = this.uid;
             var l = this;
 
@@ -46,7 +42,7 @@ class DownloadFile {
                             id: uuid,
                             fileTotalSize: nowDownloadSize,
                             fileDownloadedSize: response.headers['content-length']
-                        }, _events);
+                        }, events);
                     });
                 }
             });
@@ -61,7 +57,7 @@ class DownloadFile {
                             status: "finish",
                             type: "file",
                             id: uuid
-                        }, _events);
+                        }, events);
                         return resolve(filePath);
                     }, 1000);
                 }
@@ -78,21 +74,6 @@ class DownloadFile {
 
         fs.renameSync(fileTempPath + "/" + uuid, filePath + "/" + fileName);
     }
-
-    on(name, listener) {
-        if (!this._events[name]) {
-            this._events[name] = [];
-        }
-
-        this._events[name].push(listener);
-    }
-
-    removeListener(name, listener) {
-        if (this._events[name]) {
-            this._events[name].splice(this._events[name].indexOf(listener), 1);
-        }
-    }
-
 }
 
 exports.DownloadFile = DownloadFile;
