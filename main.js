@@ -19,7 +19,11 @@ function createWindow() {
 
     win.removeMenu();
     win.webContents.openDevTools();
-    win.loadURL(`file:///${__dirname}/src/pages/index.html`);
+    if (process.env.NODE_ENV === 'development') {
+        win.loadURL(`file:///${__dirname}/build/index.html`);
+    } else {
+        win.loadURL("http://localhost:3000");
+    }
     remoteMain.enable(win.webContents);
 
     return win;

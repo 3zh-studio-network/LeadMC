@@ -21,6 +21,7 @@ class ServerConfig {
     }
 
     configExists() {
+        var fs = require("fs");
         return fs.existsSync(this.configPath);
     }
 

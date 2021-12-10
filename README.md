@@ -3,20 +3,22 @@ A UI based Minecraft Servers Controller
 
 ## What is LeadMC
 
-LeadMC isn't a Minecraft Launcher but a Minecraft Servers Controller with clean UI.
+LeadMC isn't a Minecraft Launcher but a Minecraft Servers Controller with a clean And Powerful GUI.
 
 ## Features & TODO
 
  * [ ] Easy to create a Minecraft Server in any version.
  * [ ] Easy to control server without commands.
  * [ ] Easy to customize servers.
+ * [x] Easy to edit servers' properties.
  * [x] Easy to download server with just a few steps.
  * [ ] Able to get the server's performance without any commands.
  * [ ] Able to control server with command.
  * [ ] Able to get server's logs.
  * [ ] Able to restart the server when the server crash.
+ * [ ] Able to backup the server.
  * [ ] Discord Servers can be able to control the server with just a few texts.
- * [ ] Clean UI.
+ * [ ] Clean GUI.
 
 ## How to use
 
