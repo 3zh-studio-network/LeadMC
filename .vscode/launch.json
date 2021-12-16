@@ -7,7 +7,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "React Launch",
+            "name": "React: Launch",
             "program": "${workspaceRoot}/node_modules/react-scripts/scripts/start.js",
             "args": [
                 "start"
@@ -44,6 +44,7 @@
         {
             "name": "Electron: All",
             "configurations": [
+                "React: Launch",
                 "Electron: Main",
                 "Electron: Renderer"
             ]
